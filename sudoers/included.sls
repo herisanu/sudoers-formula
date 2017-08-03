@@ -13,7 +13,8 @@ include:
     - mode: 440
     - template: jinja
     - source: salt://sudoers/files/sudoers
-    - check_cmd: {{ sudoers.get('exec-prefix', '/usr/sbin') }}/visudo -c -f
+# Temporary fix until 2017.7.1
+#    - check_cmd: {{ sudoers.get('exec-prefix', '/usr/sbin') }}/visudo -c -f
     - context:
         included: True
         sudoers: {{ spec|json }}
